@@ -1,3 +1,17 @@
+eks setup
+
+# 1) ec2 instance must it should be in client view
+
+
+# 1) aws cli : to interact with aws services
+# 2)eksctl : create to cluster 
+# 3) kubectl : to communicate and deploy applications we use kubectl command line utility 
+
+ # 4) create iam role eks permission attach to ec2 clinet machine
+
+
+
+____________________________________________________________________________________________________________________________________________________________________
 1)# Step - 1 : Create EKS Management Host in AWS
 # Launch new Ubuntu VM using AWS Ec2 ( t2.micro )
 # Connect to machine and install kubectl using below commands
