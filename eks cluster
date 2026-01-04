@@ -45,11 +45,16 @@ Attach created role to EKS Management Host (Select EC2 => Click on Security => M
 Step - 3 : Create EKS Cluster using eksctl
 Syntax:
 
-eksctl create cluster --name cluster-name
---region region-name
---node-type instance-type
---nodes-min 2
---nodes-max 2 \ --zones ,
+eksctl create cluster \
+  --name chaithu-cluster3 \
+  --region us-east-1 \
+  --nodegroup-name ng-1 \
+  --node-type t3.medium \
+  --nodes 2 \
+  --nodes-min 2 \
+  --nodes-max 2 \
+  --zones us-east-1a,us-east-1b
+
 _______________________________________________________________________________________________________________________________________________________
 eksctl create cluster --name chaithu cluster3 --region ap-south-1a --node-type t3.micro  --zones ap-south-1a,ap-south-1b
 
