@@ -7,3 +7,13 @@ eksctl create cluster \
   --nodes-min 2 \
   --nodes-max 2 \
   --zones ap-south-2a,ap-south-2b
+
+
+
+# cluster name
+# region 
+# node name
+# node type
+#nodes required
+#nodes min
+# nodes max
