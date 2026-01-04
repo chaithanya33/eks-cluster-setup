@@ -17,3 +17,9 @@ eksctl create cluster \
 #nodes required
 #nodes min
 # nodes max
+
+
+eksctl utils associate-iam-oidc-provider \
+  --cluster chaithu-cluster \
+  --region ap-south-2 \
+  --approve
