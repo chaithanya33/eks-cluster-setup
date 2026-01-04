@@ -1,0 +1,9 @@
+eksctl create cluster \
+  --name chaithu \
+  --region ap-south-2 \
+  --nodegroup-name ng-1 \
+  --node-type t3.medium \
+  --nodes 2 \
+  --nodes-min 2 \
+  --nodes-max 2 \
+  --zones ap-south-2a,ap-south-2b
