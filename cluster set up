@@ -23,3 +23,18 @@ eksctl utils associate-iam-oidc-provider \
   --cluster chaithu-cluster \
   --region ap-south-2 \
   --approve
+########
+
+
+
+eks setup
+
+1) ec2 instance must it should be in client view
+
+
+1) aws cli : to interact with aws services
+2)eksctl : create to cluster 
+3) kubectl : to communicate and deploy applications we use kubectl command line utility 
+
+4) create iam role eks permission attach to ec2 clinet machine
+
