@@ -1,13 +1,13 @@
 ---
-apiVersion: v1
-kind: Pod
-metadata:
-  name: pod-1
-  labels:
-    project: swiggy
-spec:
+apiVersion: v1 # we can check kublet api-resources
+kind: Pod # there is no of services kubs so type 
+metadata: # data
+  name: pod-1   # pod name
+  labels:       # for easy identy we use labels so we can filter out by labels in pods
+    project: swiggy   
+spec:                  # pod spec = containers
   containers:
-    - name: cont-1
-      image: nginx
-      ports:
-        - containerPort: 80
+    - name: cont-1    # conatiner name
+      image: nginx    # image name
+      ports:           # port running by container
+        - containerPort: 80   # container port
