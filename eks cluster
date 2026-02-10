@@ -46,14 +46,14 @@ Step - 3 : Create EKS Cluster using eksctl
 Syntax:
 
 eksctl create cluster \
-  --name chaithu-cluster3 \
-  --region us-east-1 \
+  --name chaithu-cluster1 \
+  --region us-east-2 \
   --nodegroup-name ng-1 \
   --node-type t3.medium \
   --nodes 2 \
   --nodes-min 2 \
   --nodes-max 2 \
-  --zones us-east-1a,us-east-1b
+  --zones us-east-2a,us-east-2b
 
 _______________________________________________________________________________________________________________________________________________________
 eksctl create cluster --name chaithu cluster3 --region ap-south-1a --node-type t3.micro  --zones ap-south-1a,ap-south-1b
