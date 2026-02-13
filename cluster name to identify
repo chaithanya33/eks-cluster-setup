@@ -1,0 +1,2 @@
+to know cluster name
+aws eks list-clusters --region us-east-2
