@@ -1,1 +1,11 @@
+create bucket in region
+
+aws s3api create-bucket \
+  --bucket my-devops-terraform-bucket-123 \
+  --region us-east-2 \
+  --create-bucket-configuration LocationConstraint=us-east-2
+
+and next step export 
+
+
 export KOPS_STATE_STORE=s3://bucketname
