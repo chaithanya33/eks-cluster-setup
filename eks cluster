@@ -49,7 +49,7 @@ eksctl create cluster \
   --name chaithu-cluster1 \
   --region us-east-2 \
   --nodegroup-name ng-1 \
-  --node-type t3.medium \
+  --node-type t3.micro \
   --nodes 2 \
   --nodes-min 2 \
   --nodes-max 2 \
