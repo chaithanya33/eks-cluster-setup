@@ -47,13 +47,13 @@ Syntax:
 
 eksctl create cluster \
   --name west-cluster1 \
-  --region us-west-1 \
+  --region us-west-2 \
   --nodegroup-name ng-1 \
-  --node-type t3.large \
+  --node-type t2.large \
   --nodes 3 \
   --nodes-min 3 \
   --nodes-max 4 \
-  --zones us-west-1a,us-west-1c
+  --zones us-west-2a,us-west-2b
 _______________________________________________________________________________________________________________________________________________________
 eksctl create cluster --name eks cluster224 --region ap-south-1a --node-type t3.micro  --zones ap-south-1a,ap-south-1b
 
