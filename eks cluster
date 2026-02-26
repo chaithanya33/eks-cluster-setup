@@ -53,7 +53,7 @@ eksctl create cluster \
   --nodes 3 \
   --nodes-min 3 \
   --nodes-max 4 \
-  --zones us-east-2a,us-east-2b
+  --zones us-west-1a,us-west-2b
 
 _______________________________________________________________________________________________________________________________________________________
 eksctl create cluster --name eks cluster224 --region ap-south-1a --node-type t3.micro  --zones ap-south-1a,ap-south-1b
