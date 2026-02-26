@@ -56,7 +56,7 @@ eksctl create cluster \
   --zones us-east-2a,us-east-2b
 
 _______________________________________________________________________________________________________________________________________________________
-eksctl create cluster --name chaithu cluster3 --region ap-south-1a --node-type t3.micro  --zones ap-south-1a,ap-south-1b
+eksctl create cluster --name eks cluster224 --region ap-south-1a --node-type t3.micro  --zones ap-south-1a,ap-south-1b
 
 # eksctl create cluster --name chaithu cluster3 --region us-east-2 --node-type t3.micro  --zones us-east-2a,us-east-2b
 
