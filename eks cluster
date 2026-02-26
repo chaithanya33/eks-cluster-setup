@@ -47,7 +47,7 @@ Syntax:
 
 eksctl create cluster \
   --name chaithu-cluster1 \
-  --region us-east-2 \
+  --region us-west-1 \
   --nodegroup-name ng-1 \
   --node-type t2.large \
   --nodes 3 \
