@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment             #Deployment create = replication set + pods+ cont+a                
+kind: Deployment             #Deployment create = replication set + pods+ cont+application
 metadata:
   name: my-deployment
   namespace: dev
@@ -18,3 +18,6 @@ spec:
           image: chaithanya2/soil:latest
           ports:
             - containerPort: 80
+
+  # deployment = roolback features and 0 down time it has also version features to track so deployment has more advance features
+  # replication set = pods+ cont + app
