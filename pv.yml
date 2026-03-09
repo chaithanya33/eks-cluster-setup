@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mypv
+spec:
+  capacity:
+    storage: 22Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle  # here we can give dynamic so automatically alloacte
+  awsElasticBlockStore:
+    volumeID: vol-0913f1a750f00c599
+    fsType: ext4
