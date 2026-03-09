@@ -1,16 +1,16 @@
-Pod
-↓
-PVC
-↓
-PV
-↓
-EBS Volume
-↓
-EBS CSI Driver (working)
-↓
-Volume attached to node
-↓
-Container starts
+1)Pod
+ ↓
+2)PVC
+ ↓
+3)PV
+ ↓
+4)EBS Volume
+ ↓
+5)EBS CSI Driver (working)
+   ↓
+6)Volume attached to node
+   ↓
+7)Container starts
 
 
 ______________________
