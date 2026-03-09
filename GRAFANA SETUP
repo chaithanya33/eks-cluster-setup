@@ -1,0 +1,201 @@
+Kubernetes Cluster
+       ↓
+Node Exporter (collects node metrics)
+       ↓
+Prometheus (stores metrics)
+       ↓
+Grafana (visual dashboards)
+       ↓
+Alertmanager (alerts)
+___________________________________________________________________________________________________________________________________________________________
+
+Install Helm
+helm version
+
+If Helm is not installed:
+
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+2. Create Monitoring Namespace
+kubectl create namespace monitoring
+
+Verify:
+
+kubectl get ns
+3. Add Prometheus Helm Repository
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+
+Update repo:
+
+helm repo update
+4. Install kube-prometheus-stack
+
+This installs:
+
+Prometheus
+
+Grafana
+
+Alertmanager
+
+Node Exporter
+
+kube-state-metrics
+
+Run:
+
+helm install monitoring prometheus-community/kube-prometheus-stack -n monitoring
+5. Verify Installation
+
+Check pods:
+
+kubectl get pods -n monitoring
+
+Expected pods:
+
+monitoring-grafana
+prometheus-monitoring-kube-prometheus-prometheus
+monitoring-kube-state-metrics
+monitoring-prometheus-node-exporter
+alertmanager-monitoring-kube-prometheus-alertmanager
+
+All should show:
+
+Running
+6. Check Services
+kubectl get svc -n monitoring
+
+Example output:
+
+monitoring-grafana
+monitoring-kube-prometheus-prometheus
+monitoring-kube-state-metrics
+7. Expose Grafana (LoadBalancer)
+
+Edit Grafana service:
+
+kubectl edit svc monitoring-grafana -n monitoring
+
+Change:
+
+type: ClusterIP
+
+to
+
+type: LoadBalancer
+
+Save and exit.
+
+8. Get Grafana URL
+
+Run:
+
+kubectl get svc -n monitoring
+
+Example:
+
+monitoring-grafana   LoadBalancer   EXTERNAL-IP
+
+Open in browser:
+
+http://<LOADBALANCER-URL>
+9. Login to Grafana
+
+Default credentials:
+
+Username: admin
+Password: prom-operator
+
+If password doesn't work:
+
+kubectl get secret monitoring-grafana -n monitoring \
+-o jsonpath="{.data.admin-password}" | base64 --decode
+10. Verify Prometheus
+
+Port-forward Prometheus:
+
+kubectl port-forward svc/monitoring-kube-prometheus-prometheus -n monitoring 9090
+
+Open:
+
+http://localhost:9090
+
+Check:
+
+Status → Targets
+
+All targets should be UP.
+
+11. Test Metrics
+
+In Prometheus query:
+
+up
+
+You should see multiple targets with value 1.
+
+12. Import Grafana Dashboards
+
+Go to:
+
+Grafana → Dashboards → New → Import
+
+Import these dashboards.
+
+Node Monitoring Dashboard
+1860
+
+Shows:
+
+CPU
+
+Memory
+
+Disk
+
+Network
+
+Kubernetes Cluster Dashboard
+15757
+
+Shows:
+
+Node health
+
+Pod metrics
+
+Cluster usage
+
+13. Verify Metrics in Grafana
+
+Go to:
+
+Explore → Prometheus
+
+Run query:
+
+up
+
+Graph should appear.
+
+14. Useful Prometheus Queries
+CPU Usage
+100 - (avg by(instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)
+Memory Usage
+node_memory_MemAvailable_bytes
+Pod Count
+count(kube_pod_info)
+15. Monitoring Stack Components
+Component	Purpose
+Prometheus	Metrics collection
+Grafana	Visualization
+Node Exporter	Node metrics
+kube-state-metrics	Kubernetes metrics
+Alertmanager	Alerting system
+16. Final Verification
+
+Check everything:
+
+kubectl get pods -n monitoring
+kubectl get svc -n monitoring
+
+Grafana dashboard should display metrics.
