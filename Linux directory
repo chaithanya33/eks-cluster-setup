@@ -1,0 +1,6 @@
+d — file type. The first character tells you what it is. d = directory (folder). A - here would mean a regular file. l would mean a symbolic link.
+rwxr-xr-x — permissions. This 9-character block is split into 3 groups of 3:
+
+rwx → the owner (root) can read, write, and enter
+r-x → the group (adm) can read and enter, but NOT write
+r-x → everyone else can also read and enter, but NOT write
