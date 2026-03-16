@@ -1,0 +1,3 @@
+sudo file -s /dev/xvdj1
+sudo mkdir -p /mnt/restore
+ls -lh /mnt/restore
