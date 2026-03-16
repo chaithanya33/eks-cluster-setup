@@ -1,0 +1,34 @@
+config map:
+
+
+ 1)for ex: 3values in config map but u want to take specficf one key value(configmapkeyRef)
+
+ 2) if u want to take all values from config map then use (config map Ref)
+
+
+1)  if want to take full file use 
+
+A)   envFrom
+
+
+spec:
+
+ containers:
+ - name: cont-1
+  image: ubuntu
+ envFROM:
+ - cobnfig mapREF
+  name: first cm
+__________________________________________________________________________________________________________
+
+
+2) if u take only one file then?
+A) use VALUE FROM
+
+
+env:
+ - name: klm1
+valueFROM:
+- configMapKeyREF
+  key: trainer
+ name: first cm
