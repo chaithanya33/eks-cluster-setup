@@ -1,3 +1,4 @@
-sudo file -s /dev/xvdj1
-sudo mkdir -p /mnt/restore
+sudo file -s /dev/xvdj1       #
+sudo mkdir -p /mnt/restore     #
 ls -lh /mnt/restore
+sudo cp -r /mnt/restore/root/chaithu/ /root/chaithu/  # to copy from old ec2 to new ec2 command
