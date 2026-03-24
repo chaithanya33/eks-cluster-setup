@@ -7,3 +7,29 @@ WE SHOUILD INSTALL METRIC SERVER OR ELSE WE CANNOT IMPLEMENT HPA
 METRIC SERVER IS USED FOR CPU AND MEMORY UTLIZATION ENTIRE CLUSTER INFORMATION
 
 IT WILL BE INSTALLED IN KUBE-SYETEM NAMESPACE 
+____________________________________________________________________________________________________________
+
+basic hpa file to implement hpa in pod 
+
+
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+name: myhpa
+namespace: dev
+spec:
+scaleTargetRef: # services like bank/app/bus/or any service for pod
+  apiVersion: apps/v1
+  kind: Deployment
+  name:      # here we should give deployment name
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+  - type: Resources
+    resources:
+    name: cpu
+    target:
+    type: Utilization
+    averageUtilization: 50
+    
