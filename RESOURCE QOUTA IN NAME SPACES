@@ -1,0 +1,1 @@
+# if we assinged a limit for namespace and not assigned for pods like cpu memory ram then the pod will not create
