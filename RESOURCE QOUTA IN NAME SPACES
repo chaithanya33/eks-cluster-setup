@@ -37,3 +37,24 @@ spec:
           ports:
             - containerPort: 80
 ___________________________________________________________________________________________________________________________________
+ to allocate namesapces for cpu and memeory 
+
+we should write yml.file
+
+---
+apiVersion: V1
+kind: ResourceQuota
+metadata:
+name: devQuota
+namespace: dev
+spec:
+hard:    #hardware limits
+limits.cpu: "200m"
+limits.memory: "38Mi"
+requests.cpu: "150m"
+requests.memory: "12Mi"
+________________________________________________________________________________________________________________________________
+
+
+
+
