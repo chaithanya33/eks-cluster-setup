@@ -54,6 +54,9 @@ limits.memory: "38Mi"
 requests.cpu: "150m"
 requests.memory: "12Mi"
 ________________________________________________________________________________________________________________________________
+errors:
+for oom (out of memory) sufficent memry is not in namespace so the pod  cannot create
+
 
 
 
