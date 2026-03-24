@@ -1,1 +1,39 @@
 # if we assinged a limit for namespace and not assigned for pods like cpu memory ram then the pod will not create
+
+we will not provide mb we will use MIB // in any cloud we use  MIB /megabytes it will give extra storage /// some diference in mb and mib
+
+there are two types of requests:
+
+1) LIMIT : REPRESENT THE MAXIMUM NO OF CPU or MEMORY THAT CAN USE
+2) REQUEST: REPRESENT THE MINIMUM AMOUNT OF CPU OR MEMORY THAT POD MUST GUARNTEED TO HAVE
+
+THERE IS MUTIPLE SECANRIOS IN RESOURCES QUOTA 
+
+ex: apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment
+  namespace: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: soil
+  template:
+    metadata:
+      labels:
+        app: soil
+    spec:
+      containers:
+        - name: cont1
+          image: 337040980959.dkr.ecr.ap-southeast-1.amazonaws.com/soil-sense:latest
+          resources:
+            requests:
+            memory: "64Mi"
+            cpu: "250m"
+            limits:
+            memory: "128Mi"
+            cpu: "500m"
+          ports:
+            - containerPort: 80
+___________________________________________________________________________________________________________________________________
