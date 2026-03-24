@@ -1,0 +1,4 @@
+ingress controller supports host based and path based routing
+
+host based means the request goes to the pod  ex:/ domain infront host based 
+path based means the request goes to the based on the path EX: /app  // after domain
