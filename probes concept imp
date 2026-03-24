@@ -1,0 +1,42 @@
+WE USED PEOBES TO CHECK IN PODS WHETHER THE CONTAINER IS READY OR NOT WE USE PROBES ARE 3 TYPES:
+
+
+1) READINESS PROBES: ARE USED TO INDICATE WHEN CONTAINER IS REDAY TO REACIVE TRAFFIC
+
+2) LIVENESS PROBES: ARE USED TO DETERMINE A CONTAINER IS STILL RUNNING AND RESPONDING  TO REQUESTS
+
+3)STARTUP PROBES: IS USED TO WHETHER THE APPILICATION IN CONTAINER IS STARETD ARE NOT WE USE STARTUP PROBES
+
+
+WE USE DELAY CONCEPT IN READINESS AND LIVNESS UNTIL THE APPLICATION IS RUNNING
+
+FOR EX : ANY APPLICATION IN EKS WEITHER INCREASING OR DECREASING PODS IT WILL TAKE SOME TIME IT WILL TAKE SOME TIME
+
+___________________________________________________________________________________________________________________________
+
+ex: 
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-1
+  labels:
+    test: live
+spec:
+  containers:
+  - name: cont-1
+    image: busybox
+    args:
+    - /bin/sh
+    - -c
+    - touch /tmp/healthy; sleep 1000
+
+    livenessProbe:
+      exec:  #Liveness probe runs a command (exec)
+        command:
+        - cat
+        - /tmp/healthy
+      initialDelaySeconds: 5  # Waits 5 seconds AFTER container starts, then begins checks
+      periodSeconds: 5    # probe runs every 5 seconds
+      timeoutSeconds: 30  # Probe waits max 30 seconds for command to finish
+                          #If command times out → probe fails
