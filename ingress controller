@@ -6,5 +6,5 @@ path based means the request goes to the based on the path EX: /app  // after do
 
 
 🔹 Core difference (1 line)
-LoadBalancer → exposes your service to the outside world (network level)
+LoadBalancer → exposes your service to the outside world (network level)  || Routes traffic → directly to a single service
 Ingress Controller → manages HTTP/HTTPS routing inside the cluster (application level)
