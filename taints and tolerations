@@ -15,3 +15,10 @@ ex:
 _________________________________________________________________________________________________________________________________
 
 commands to check //  kubectl describe node ip-192-168-22-5.ap-southeast-2.compute.internal | grep taints
+
+
+in tolerations we have 3 types 
+
+1) no scheduling = new pods created 
+2) no execute = existing or new pods created in particular node
+3) prefer no scheduling = new pods but not guranteed
