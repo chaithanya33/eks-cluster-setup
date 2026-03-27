@@ -2,4 +2,4 @@ taints = nodes // for particular node for pod scheduling || kubectl taint nodes 
 
 if u want untaint node use above same command in the end use \\ -
 
-tolerations = // for particular pod will assin in paerticular node || here we mentioned in pod.yml file
+tolerations = // for particular pod will assin in paerticular node || here we mentioned in pod.yml file || key and value then only it create 
