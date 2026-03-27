@@ -13,3 +13,5 @@ ex:
   value: "apu"  # here what we declared in node 
   effect: "NoSchedule"  # for new pods it wiil applies || no schedule means 
 _________________________________________________________________________________________________________________________________
+
+commands to check //  kubectl describe node ip-192-168-22-5.ap-southeast-2.compute.internal | grep taints
