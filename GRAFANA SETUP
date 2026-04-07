@@ -259,3 +259,7 @@ echo "🌍 Grafana URL: http://$LB"
 echo "👤 Username: admin"
 echo "🔑 Password: $PASSWORD"
 echo "=================================================="
+_________________________________________________________________________________________________________________
+
+chmod +x monitoring-setup.sh
+./monitoring-setup.sh
